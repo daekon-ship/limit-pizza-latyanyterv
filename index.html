@@ -3,8 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Limit Pizza — Online rendelés · látványterv (demó)</title>
-<meta name="description" content="Limit Pizza látványterv: prémium online rendelési élmény koncepció. DEMÓ — az ételek, árak és adatok helyőrzők.">
+<title>Limit Pizza — Kézzel nyújtott, kemencében sült pizza · online rendelés (demó)</title>
+<meta name="description" content="Limit Pizza: kézzel nyújtott, kemencében sült pizza saját recept alapján. Étlap 30–32 cm, szerdától vasárnapig 16:00–22:00. Rendelés: +36 30 786 9239. Demó látványterv.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:title" content="Limit Pizza — Itt nincs limit.">
+<meta property="og:description" content="Kézzel nyújtott, kemencében sült pizza. Szerda–vasárnap 16:00–22:00. Rendelés: +36 30 786 9239.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/pizza-margherita.jpg">
+<meta property="og:locale" content="hu_HU">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Limit Pizza",
+  "servesCuisine": "Pizza",
+  "priceRange": "$$",
+  "telephone": "+36307869239",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "16:00",
+    "closes": "22:00"
+  }],
+  "acceptsReservations": "False"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
@@ -54,7 +77,8 @@ header{
   max-width:1440px; margin:0 auto; padding:0 var(--gutter);
   height:64px; display:flex; align-items:center; gap:28px;
 }
-.logo{display:flex;align-items:baseline;gap:8px;text-decoration:none;white-space:nowrap}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;white-space:nowrap}
+.logo img{width:42px;height:auto;display:block}
 .logo b{font-weight:900;font-stretch:125%;font-size:19px;letter-spacing:-.01em;text-transform:uppercase}
 .logo i{
   font-style:normal;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
@@ -120,6 +144,8 @@ header.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .hero-media{position:relative;padding-bottom:clamp(32px,4vw,56px)}
 .hero-media .ph{aspect-ratio:4/5}
+.hero-media .ph.has-photo img{animation:kenburns 14s ease-out both}
+@keyframes kenburns{from{transform:scale(1.06)}to{transform:scale(1)}}
 .hero-media .ph-mini{
   position:absolute;left:-24px;bottom:0;width:38%;aspect-ratio:1;
   border:2px solid var(--paper);box-shadow:0 24px 60px rgba(20,19,18,.28);
@@ -476,7 +502,8 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
 <header id="header">
   <div class="header-in">
     <a class="logo" href="#top" aria-label="Limit Pizza — kezdőoldal">
-      <b>Limit&nbsp;Pizza</b><i title="Helyőrző: az eredeti logó kerül ide (a valós, óralogos logót nem újratervezzük)">logó helye</i>
+      <img src="assets/logo.png" alt="Limit Pizza logó" width="42" height="38" style="filter:none">
+      <b>Limit&nbsp;Pizza</b>
     </a>
     <nav class="main" id="mainNav" aria-label="Fő navigáció">
       <a href="#kiemelt">Kiemelt</a>
@@ -513,10 +540,10 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     </div>
     <div class="hero-media rv in" style="transition-delay:.25s">
       <div class="ph has-photo" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizza">
-        <img src="assets/pizza-margherita.jpg" alt="Limit Pizza — Margherita, kemencéből" loading="eager">
+        <img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Limit Pizza — Margherita, kemencéből" loading="eager">
       </div>
       <div class="ph ph-mini has-photo" role="img" aria-label="Részletfotó">
-        <img src="assets/pizza-tavaszi.jpg" alt="Pizza részlet" loading="lazy">
+        <img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Pizza részlet" loading="lazy">
       </div>
     </div>
   </div>
@@ -538,7 +565,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
   </div>
   <div class="feat-grid">
     <article class="feat-card feat-a rv">
-      <div class="ph has-photo" role="img" aria-label="Margherita — kemencéből"><img src="assets/pizza-margherita.jpg" alt="Margherita pizza" loading="lazy"></div>
+      <div class="ph has-photo" role="img" aria-label="Margherita — kemencéből"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita pizza" loading="lazy"></div>
       <span class="feat-badge">A favorit</span>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p1"></h3>
@@ -551,7 +578,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
     </article>
     <article class="feat-card feat-b rv">
-      <div class="ph has-photo" role="img" aria-label="Tavaszi pizza"><img src="assets/pizza-tavaszi.jpg" alt="Tavaszi pizza" loading="lazy"></div>
+      <div class="ph has-photo" role="img" aria-label="Tavaszi pizza"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Tavaszi pizza" loading="lazy"></div>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p2"></h3>
         <span class="price demo-item-price" data-id="p2"></span>
@@ -563,7 +590,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
     </article>
     <article class="feat-card feat-c rv">
-      <div class="ph wide has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>
+      <div class="ph wide has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p3"></h3>
         <span class="price demo-item-price" data-id="p3"></span>
@@ -621,12 +648,12 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     <p class="lede">Kizárólag a pizzéria saját fotói kerülnek ide — igényes, változatos rácsban. Addig egyértelmű helyőrzőkkel dolgozunk.</p>
   </div>
   <div class="gal rv">
-    <div class="ph g1 has-photo" role="img" aria-label="Pizza a kemencéből"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza felülről" loading="lazy"></div>
-    <div class="ph g2 has-photo" role="img" aria-label="Pizza részlet"><img src="assets/pizza-tavaszi.jpg" alt="Tavaszi pizza" loading="lazy"></div>
-    <div class="ph g3 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" alt="Margherita" loading="lazy"></div>
-    <div class="ph g4 has-photo" role="img" aria-label="Pizza"><img src="assets/pizza-tavaszi.jpg" alt="Pizza" loading="lazy"></div>
-    <div class="ph g5 has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>
-    <div class="ph g6 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" alt="Margherita" loading="lazy"></div>
+    <div class="ph g1 has-photo" role="img" aria-label="Pizza a kemencéből"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza felülről" loading="lazy"></div>
+    <div class="ph g2 has-photo" role="img" aria-label="Pizza részlet"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Tavaszi pizza" loading="lazy"></div>
+    <div class="ph g3 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
+    <div class="ph g4 has-photo" role="img" aria-label="Pizza"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Pizza" loading="lazy"></div>
+    <div class="ph g5 has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>
+    <div class="ph g6 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
   </div>
 </section>
 
@@ -707,6 +734,14 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
         <button class="x-btn" data-close="config" aria-label="Bezárás">✕</button>
       </div>
       <p id="cfgIng" style="color:var(--ink-3);font-size:14px"></p>
+      <div class="cfg-sec" id="cfgBaseOpt">
+        <small>Alap — az étlap szerint választható</small>
+        <div class="toppings">
+          <button type="button" class="tchip on" data-base="Klasszikus paradicsomos">Klasszikus paradicsomos</button>
+          <button type="button" class="tchip" data-base="Fokhagymás-tejfölös">Fokhagymás–tejfölös</button>
+          <button type="button" class="tchip" data-base="Csípős paradicsomos">Csípős paradicsomos</button>
+        </div>
+      </div>
       <div class="cfg-sec">
         <small>Alapfeltétek — kikapcsolhatók</small>
         <div class="toppings" id="cfgToppings"></div>
@@ -825,7 +860,7 @@ function renderMenu(){
     idx = 0;
     html += `<div class="menu-group"><h3 class="kicker" style="margin-bottom:14px"><span class="num">${CAT_LABEL[cat]}</span></h3>`;
     if(cat === 'pizza'){
-      html += `<div class="ph wide has-photo rv" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizzák"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>`;
+      html += `<div class="ph wide has-photo rv" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizzák"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>`;
     }
     for(const it of items){
       idx++;
@@ -870,6 +905,11 @@ function openConfig(id){
   $('#cfgToppings').parentElement.style.display = hasToppings ? '' : 'none';
   $('#cfgToppings').innerHTML = it.toppings.map(t =>
     `<button type="button" class="tchip on" data-t="${t}">${t}</button>`).join('');
+  // alapválasztó — az étlap szerint: klasszikus paradicsomos VAGY fokhagymás-tejfölös / csípős paradicsomos
+  cfg.base = 'Klasszikus paradicsomos';
+  const baseSec = $('#cfgBaseOpt');
+  baseSec.style.display = it.cat === 'pizza' ? '' : 'none';
+  $$('#cfgBaseOpt .tchip').forEach(b => b.classList.toggle('on', b.dataset.base === 'Klasszikus paradicsomos'));
   $('#cfgExtras').innerHTML = it.extras.map(e => {
     const [n,p] = e.split('|');
     return `<button type="button" class="tchip extra" data-x="${n}" data-p="${p}">${n}<span class="fp">+${p} Ft</span></button>`;
@@ -893,6 +933,11 @@ $('#cfgToppings').addEventListener('click', e => {
   if(cfg.removed.includes(t)){ cfg.removed = cfg.removed.filter(x => x !== t); b.classList.remove('off'); b.classList.add('on'); }
   else { cfg.removed.push(t); b.classList.add('off'); b.classList.remove('on'); }
 });
+$('#cfgBaseOpt').addEventListener('click', e => {
+  const b = e.target.closest('.tchip'); if(!b) return;
+  cfg.base = b.dataset.base;
+  $$('#cfgBaseOpt .tchip').forEach(c => c.classList.toggle('on', c === b));
+});
 $('#cfgExtras').addEventListener('click', e => {
   const b = e.target.closest('.tchip'); if(!b) return;
   const n = b.dataset.x;
@@ -903,19 +948,19 @@ $('#cfgExtras').addEventListener('click', e => {
 $('#cfgMinus').onclick = () => { if(cfg.qty > 1){ cfg.qty--; $('#cfgQty').textContent = cfg.qty; updateCfgTotal(); } };
 $('#cfgPlus').onclick = () => { cfg.qty++; $('#cfgQty').textContent = cfg.qty; updateCfgTotal(); };
 $('#cfgAdd').onclick = () => {
-  addToCart(cfg.id, cfg.qty, cfg.removed, [...cfg.extras], $('#cfgNote').value.trim());
+  addToCart(cfg.id, cfg.qty, cfg.removed, [...cfg.extras], $('#cfgNote').value.trim(), cfg.base);
   hideOverlay('config');
   toast('Kosárba téve');
 };
 /* ══ Kosár ══ */
 let cart = [];
 let orderMode = 'delivery';
-function configKey(id, removed, extras){ return id + '|' + [...removed].sort().join(',') + '|' + [...extras].sort().join(','); }
-function addToCart(id, qty, removed, extras, note){
-  const key = configKey(id, removed, extras);
+function configKey(id, removed, extras, base){ return id + '|' + (base || '') + '|' + [...removed].sort().join(',') + '|' + [...extras].sort().join(','); }
+function addToCart(id, qty, removed, extras, note, base){
+  const key = configKey(id, removed, extras, base);
   const found = cart.find(c => c.key === key);
   if(found){ found.qty += qty; found.note = note || found.note; }
-  else cart.push({key, id, qty, removed, extras, note});
+  else cart.push({key, id, qty, removed, extras, note, base: base || 'Klasszikus paradicsomos'});
   updateCartUI();
 }
 function cartCount(){ return cart.reduce((s,c) => s + c.qty, 0); }
@@ -945,6 +990,7 @@ function renderCart(){
   body.innerHTML = cart.map((c,i) => {
     const it = byId(c.id);
     const bits = [];
+    if(c.base && c.base !== 'Klasszikus paradicsomos') bits.push('Alap: ' + c.base);
     c.removed.forEach(r => bits.push('− ' + r));
     c.extras.forEach(x => bits.push('+ ' + x));
     if(c.note) bits.push('„' + c.note + '”');
@@ -979,7 +1025,8 @@ function renderCart(){
       ${orderMode==='delivery' ? `<div class="row"><span>Kiszállítás (demó díj)</span><span>${fmt(fee)}</span></div>` : '<div class="row"><span>Átvétel a helyszínen</span><span>ingyenes</span></div>'}
       <div class="row total"><span>Összesen</span><span>${fmt(sub + fee)}</span></div>
     </div>
-    <button class="btn yellow" id="placeOrder" style="width:100%;margin-top:10px">Rendelés leadása · demó</button>`;
+    <button class="btn yellow" id="placeOrder" style="width:100%;margin-top:10px">Rendelés leadása · demó</button>
+    <p style="font-size:12.5px;color:var(--ink-3);text-align:center;margin-top:10px">Valós rendelés egyelőre csak telefonon: <b><a href="tel:+36307869239" style="color:var(--ink)">+36 30 786 9239</a></b> — szerdától vasárnapig 16:00–22:00.</p>`;
 }
 $('#cartBody').addEventListener('click', e => {
   const inc = e.target.closest('[data-inc]'), dec = e.target.closest('[data-dec]'), rm = e.target.closest('[data-rm]');
@@ -1008,7 +1055,9 @@ function placeOrder(){
       <p><b>Ez egy demó megerősítés.</b> A rendelés <b>nem</b> került elküldésre valós rendszerbe — a látványterv nem tartalmaz éles rendelést vagy fizetést.</p>
       <p style="font-size:13px">${count} tétel · ${modeLabel}${note ? ' · „' + note + '”' : ''}</p>
     </div>`;
-  $('#cartCta').innerHTML = `<button class="btn" id="resetCart">Új rendelés</button>`;
+  $('#cartCta').innerHTML = `
+    <a class="btn yellow" href="tel:+36307869239" style="width:100%">Rendelés telefonon · +36 30 786 9239</a>
+    <button class="btn ghost" id="resetCart" style="width:100%;margin-top:8px">Új rendelés</button>`;
   $('#resetCart').onclick = () => { hideOverlay('cart'); };
 }
 
