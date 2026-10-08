@@ -154,6 +154,14 @@ header.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
   background:rgba(20,19,18,.55);white-space:nowrap;
 }
 .ph.wide .ph-num{font-size:clamp(40px,5vw,72px)}
+.ph.has-photo img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(1.06) contrast(1.04);
+}
+.ph.has-photo::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,19,18,0) 55%,rgba(20,19,18,.38) 100%);
+}
 
 /* ── Marquee sáv ──────────────────────────── */
 .marquee{background:var(--ink);color:var(--yellow);overflow:hidden;margin-top:clamp(40px,6vw,80px)}
@@ -468,7 +476,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
 <header id="header">
   <div class="header-in">
     <a class="logo" href="#top" aria-label="Limit Pizza — kezdőoldal">
-      <b>Limit&nbsp;Pizza</b><i title="Helyőrző: az eredeti logó kerül ide">helyőrző logó</i>
+      <b>Limit&nbsp;Pizza</b><i title="Helyőrző: az eredeti logó kerül ide (a valós, óralogos logót nem újratervezzük)">logó helye</i>
     </a>
     <nav class="main" id="mainNav" aria-label="Fő navigáció">
       <a href="#kiemelt">Kiemelt</a>
@@ -491,12 +499,12 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
 <section class="hero" aria-label="Kezdő oldal">
   <div class="hero-grid">
     <div>
-      <p class="kicker"><span class="num">Est. —</span> Pizzéria · <span class="missing">[település — valós adat érkezik]</span></p>
+      <p class="kicker"><span class="num">Est. —</span> Kézzel nyújtott · kemencében süttt</p>
       <h1 class="display">
         <span class="fill rv in" style="transition-delay:.05s">Itt nincs</span>
         <span class="out rv in" style="transition-delay:.18s">limit.</span>
       </h1>
-      <p class="hero-sub rv in" style="transition-delay:.3s">A Limit Pizza úgy, ahogy ismered — most végre olyan online rendelési élménnyel, amilyet megérdemel. <strong>Demó látványterv:</strong> a fotók és adatok helyőrzők.</p>
+      <p class="hero-sub rv in" style="transition-delay:.3s">A Limit Pizza úgy, ahogy ismered — kézzel nyújtott, kemencében süttt pizza, most végre olyan online rendelési élménnyel, amilyet megérdemel. <strong>Demó látványterv:</strong> a rendelés még nem működik élesben.</p>
       <div class="hero-ctas rv in" style="transition-delay:.42s">
         <a class="btn" href="#etlap">Rendelés most</a>
         <a class="btn ghost" href="#etlap">Étlap megtekintése</a>
@@ -504,12 +512,11 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       <a class="hero-scroll" href="#kiemelt">Görgess</a>
     </div>
     <div class="hero-media rv in" style="transition-delay:.25s">
-      <div class="ph" role="img" aria-label="Fotóhelyőrző: a pizzéria saját hero fotója kerül ide">
-        <span class="ph-num">LIMIT</span>
-        <span class="ph-tag">Saját fotó helye — hero</span>
+      <div class="ph has-photo" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizza">
+        <img src="assets/pizza-margherita.jpg" alt="Limit Pizza — Margherita, kemencéből" loading="eager">
       </div>
-      <div class="ph ph-mini" role="img" aria-label="Fotóhelyőrző: részletfotó">
-        <span class="ph-tag">Részletfotó</span>
+      <div class="ph ph-mini has-photo" role="img" aria-label="Részletfotó">
+        <img src="assets/pizza-tavaszi.jpg" alt="Pizza részlet" loading="lazy">
       </div>
     </div>
   </div>
@@ -527,11 +534,11 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
   <div class="section-head rv">
     <p class="kicker"><span class="num">01</span> Kiemelt pizzák</p>
     <h2 class="display">Amiből sosem elég</h2>
-    <p class="lede">A vendégeink kedvencei — a teljes étlapból a legsikeresebbek. <strong>Demó válogatás:</strong> a valódi kiemelt termékeket az ügyfél étlapja alapján jelöljük ki.</p>
+    <p class="lede">A vendégeink kedvencei — az étlap legsikeresebbjei, kézzel nyújtva, kemencéből.</p>
   </div>
   <div class="feat-grid">
     <article class="feat-card feat-a rv">
-      <div class="ph" role="img" aria-label="Fotóhelyőrző: kiemelt pizza 1"><span class="ph-num">01</span><span class="ph-tag">Saját fotó helye</span></div>
+      <div class="ph has-photo" role="img" aria-label="Margherita — kemencéből"><img src="assets/pizza-margherita.jpg" alt="Margherita pizza" loading="lazy"></div>
       <span class="feat-badge">A favorit</span>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p1"></h3>
@@ -544,7 +551,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
     </article>
     <article class="feat-card feat-b rv">
-      <div class="ph" role="img" aria-label="Fotóhelyőrző: kiemelt pizza 2"><span class="ph-num">02</span><span class="ph-tag">Saját fotó helye</span></div>
+      <div class="ph has-photo" role="img" aria-label="Tavaszi pizza"><img src="assets/pizza-tavaszi.jpg" alt="Tavaszi pizza" loading="lazy"></div>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p2"></h3>
         <span class="price demo-item-price" data-id="p2"></span>
@@ -556,7 +563,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
     </article>
     <article class="feat-card feat-c rv">
-      <div class="ph wide" role="img" aria-label="Fotóhelyőrző: kiemelt pizza 3"><span class="ph-num">03</span><span class="ph-tag">Saját fotó helye — széles</span></div>
+      <div class="ph wide has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p3"></h3>
         <span class="price demo-item-price" data-id="p3"></span>
@@ -577,8 +584,8 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     <h2 class="display">A teljes kínálat</h2>
   </div>
   <div class="menu-note rv">
-    <span aria-hidden="true">⚠</span>
-    <span><b>Demó étlap.</b> A nevek, összetevők és árak kizárólag helyőrzők a kompozíció bemutatásához. Az éles rendszer az ügyfél <b>eredeti, változatlan étlapját</b> jeleníti meg — semmi nem kerül feltöltésre enélkül.</span>
+    <span aria-hidden="true">✓</span>
+    <span><b>Valós étlap.</b> A nevek, összetevők és árak az ügyfél eredeti étlapjáról származnak (30–32 cm). Kérhető fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal. <b>Az italok és desszertek egyelőre helyőrzők</b>, és a rendelés funkciók demó módban működnek.</span>
   </div>
   <div class="chips rv" role="tablist" aria-label="Kategóriaszűrő" id="menuChips">
     <button class="chip on" role="tab" aria-selected="true" data-cat="all">Összes</button>
@@ -614,12 +621,12 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     <p class="lede">Kizárólag a pizzéria saját fotói kerülnek ide — igényes, változatos rácsban. Addig egyértelmű helyőrzőkkel dolgozunk.</p>
   </div>
   <div class="gal rv">
-    <div class="ph g1" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F1</span><span class="ph-tag">Saját fotó helye</span></div>
-    <div class="ph g2" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F2</span><span class="ph-tag">Saját fotó helye</span></div>
-    <div class="ph g3" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F3</span><span class="ph-tag">Fotó</span></div>
-    <div class="ph g4" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F4</span><span class="ph-tag">Fotó</span></div>
-    <div class="ph g5" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F5</span><span class="ph-tag">Saját fotó helye</span></div>
-    <div class="ph g6" role="img" aria-label="Fotóhelyőrző"><span class="ph-num">F6</span><span class="ph-tag">Saját fotó helye</span></div>
+    <div class="ph g1 has-photo" role="img" aria-label="Pizza a kemencéből"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza felülről" loading="lazy"></div>
+    <div class="ph g2 has-photo" role="img" aria-label="Pizza részlet"><img src="assets/pizza-tavaszi.jpg" alt="Tavaszi pizza" loading="lazy"></div>
+    <div class="ph g3 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" alt="Margherita" loading="lazy"></div>
+    <div class="ph g4 has-photo" role="img" aria-label="Pizza"><img src="assets/pizza-tavaszi.jpg" alt="Pizza" loading="lazy"></div>
+    <div class="ph g5 has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>
+    <div class="ph g6 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" alt="Margherita" loading="lazy"></div>
   </div>
 </section>
 
@@ -632,23 +639,21 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
   <div class="contact-grid">
     <div class="contact-card rv">
       <h3>Elérhetőség</h3>
+      <p>Telefon: <b><a href="tel:+36307869239" style="text-decoration:none">+36 30 786 9239</a></b></p>
       <p>Cím: <span class="missing">[valós cím érkezik]</span></p>
-      <p>Telefon: <span class="missing">[valós telefonszám érkezik]</span></p>
-      <p>E-mail: <span class="missing">[valós e-mail érkezik]</span></p>
-      <p style="margin-top:12px"><a class="btn ghost sm" href="tel:+36000000000">Hívás indítása</a></p>
+      <p style="margin-top:12px"><a class="btn ghost sm" href="tel:+36307869239">Hívás indítása</a></p>
     </div>
     <div class="contact-card rv">
       <h3>Nyitvatartás</h3>
       <ul>
-        <li><b>Hétfő – Csütörtök</b><span class="missing">[érkezik]</span></li>
-        <li><b>Péntek – Szombat</b><span class="missing">[érkezik]</span></li>
-        <li><b>Vasárnap</b><span class="missing">[érkezik]</span></li>
+        <li><b>Hétfő – Kedd</b><span>Zárva</span></li>
+        <li><b>Szerda – Vasárnap</b><span>16:00 – 22:00</span></li>
       </ul>
-      <p style="margin-top:12px;font-size:12.5px">A nyitvatartás a valós adatok érkezése után kerül feltöltésre.</p>
+      <p style="margin-top:12px;font-size:12.5px">Rendelés: <b>csak telefonon</b> — a webes rendelés hamarosan.</p>
     </div>
     <div class="contact-card rv">
       <h3>Rendelés</h3>
-      <p>Online itt az oldalon, telefonon, vagy személyesen a helyszínen.</p>
+      <p>Kézzel nyújtott, kemencében süttt pizza — fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal is.</p>
       <p style="margin-top:12px"><a class="btn" href="#etlap">Étlap megnyitása</a></p>
     </div>
   </div>
@@ -661,7 +666,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     <div class="foot-cols">
       <div>
         <h4>Limit Pizza</h4>
-        <p>Eredeti, saját karakterű pizzéria — most prémium online rendelési élménnyel. <span class="missing" style="color:var(--yellow)">[valós bemutatkozás érkezik]</span></p>
+        <p>Kézzel nyújtott, kemencében süttt pizza — saját recept alapján. Nyitva szerdától vasárnapig 16:00–22:00.</p>
       </div>
       <div>
         <h4>Oldal</h4>
@@ -672,9 +677,9 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
       <div>
         <h4>Kapcsolat</h4>
+        <p><a href="tel:+36307869239" style="color:rgba(244,239,229,.7)">+36 30 786 9239</a></p>
+        <p>Rendelés: csak telefonon</p>
         <p><span class="missing">[cím érkezik]</span></p>
-        <p><span class="missing">[telefon érkezik]</span></p>
-        <p><span class="missing">[e-mail érkezik]</span></p>
       </div>
       <div>
         <h4>Jogi</h4>
@@ -766,22 +771,43 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
 
 <script>
 'use strict';
-/* ══ DEMÓ ADATOK — nevek, összetevők és árak helyőrzők, a valós étlap érkezéséig ══ */
+/* ══ ÉTLAP — a Limit Pizza valós étlapja (ügyfél által küldött étlap 1. oldala, 30–32 cm) ══
+   Összetevők az eredeti étlapról. Az italok/desszertek és extrák egyelőre demó helyőrzők. */
 const MENU = [
-  {id:'p1',cat:'pizza',name:'Szalámis Extra',price:2890,toppings:['paradicsomszósz','mozzarella','szalámi','oregánó'],extras:['Extra sajt|490','Extra szalámi|590','Jalapeño|390','Kukorica|390','Fokhagyma|290','Sonka|590'],wide:true,featured:true,ing:'paradicsomszósz · mozzarella · szalámi · oregánó — demó összetevők'},
-  {id:'p2',cat:'pizza',name:'Négy Sajtos',price:3190,toppings:['paradicsomszósz','mozzarella','krémsajt','kék sajt','parmezán'],extras:['Extra sajt|490','Méz|290','Dió|390','Rukkola|290'],featured:true,ing:'négyféle sajt · paradicsomszósz — demó összetevők'},
-  {id:'p3',cat:'pizza',name:'BBQ Csirkés',price:3290,toppings:['bbq szósz','mozzarella','grillezett csirke','vöröshagyma','kukorica'],extras:['Extra csirke|690','Bacon|590','Jalapeño|390','Extra sajt|490'],featured:true,ing:'bbq szósz · csirke · hagyma · kukorica — demó összetevők'},
-  {id:'p4',cat:'pizza',name:'Sonkás–Gombás',price:2490,toppings:['paradicsomszósz','mozzarella','sonka','gomba'],extras:['Extra sonka|590','Extra sajt|490','Fokhagyma|290'],ing:'sonka · gomba · mozzarella — demó összetevők'},
-  {id:'p5',cat:'pizza',name:'Hawaii',price:2590,toppings:['paradicsomszósz','mozzarella','sonka','ananász'],extras:['Extra ananász|390','Extra sajt|490','Curry|290'],ing:'sonka · ananász · mozzarella — demó összetevők'},
-  {id:'p6',cat:'pizza',name:'Vega Kertész',price:2690,toppings:['paradicsomszósz','mozzarella','paprika','gomba','vöröshagyma','olajbogyó'],extras:['Extra sajt|490','Rukkola|290','Feta|490'],ing:'szezonális zöldségek · mozzarella — demó összetevők'},
-  {id:'p7',cat:'pizza',name:'Tuna Special',price:2890,toppings:['paradicsomszósz','mozzarella','tonhal','vöröshagyma'],extras:['Extra tonhal|690','Olajbogyó|290','Lemon|290'],ing:'tonhal · hagyma · mozzarella — demó összetevők'},
-  {id:'i1',cat:'ital',name:'Üdítő 0,5 l',price:590,toppings:[],extras:[],ing:'kóla / narancs / citrus — demó'},
-  {id:'i2',cat:'ital',name:'Ásványvíz 0,5 l',price:490,toppings:[],extras:[],ing:'szénsavas / szénsavmentes — demó'},
-  {id:'i3',cat:'ital',name:'Házi limonádé 0,4 l',price:890,toppings:[],extras:[],ing:'citrom · menta — demó'},
-  {id:'d1',cat:'dessert',name:'Csokis Brownie',price:1190,toppings:[],extras:['Vaníliafagylalt|390'],ing:'sűrű csokoládés — demó'},
-  {id:'d2',cat:'dessert',name:'Sajtos rúd',price:990,toppings:[],extras:['Fokhagymás öntet|290'],ing:'fokhagymás vajjal — demó'}
+  {id:'p1',cat:'pizza',name:'Margherita',price:2950,toppings:['paradicsomszósz','mozzarella','oregánó'],extras:['Extra sajt|490','Rukkola|290','Fokhagyma|290'],photo:'assets/pizza-margherita.jpg',featured:true,ing:'paradicsomszósz · mozzarella · oregánó'},
+  {id:'p2',cat:'pizza',name:'Kukoricás',price:3050,toppings:['paradicsomszósz','mozzarella','kukorica','oregánó'],extras:['Extra sajt|490','Sonka|590','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · kukorica · oregánó'},
+  {id:'p3',cat:'pizza',name:'Gombás',price:3050,toppings:['paradicsomszósz','mozzarella','gomba','oregánó'],extras:['Extra sajt|490','Sonka|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · gomba · oregánó'},
+  {id:'p4',cat:'pizza',name:'Sonkás',price:3200,toppings:['paradicsomszósz','mozzarella','füstölt sonka','oregánó'],extras:['Extra sajt|490','Gomba|390','Kukorica|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · oregánó'},
+  {id:'p5',cat:'pizza',name:'Hawaii',price:3350,toppings:['paradicsomszósz','mozzarella','füstölt sonka','ananász','oregánó'],extras:['Extra sajt|490','Extra ananász|390','Curry|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · ananász · oregánó'},
+  {id:'p6',cat:'pizza',name:'Tavaszi',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','paprika','oregánó'],extras:['Extra sajt|490','Gomba|390','Rukkola|290'],photo:'assets/pizza-tavaszi.jpg',featured:true,ing:'paradicsomszósz · mozzarella · füstölt sonka · paprika · oregánó'},
+  {id:'p7',cat:'pizza',name:'Erdész',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','oregánó'],extras:['Extra sajt|490','Bacon|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · oregánó'},
+  {id:'p8',cat:'pizza',name:'Songoku',price:3400,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','paprika','oregánó'],extras:['Extra sajt|490','Kukorica|390','Bacon|590'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · paprika · oregánó'},
+  {id:'p9',cat:'pizza',name:'Kolbászos',price:3200,toppings:['paradicsomszósz','mozzarella','parasztkolbász','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · parasztkolbász · oregánó'},
+  {id:'p10',cat:'pizza',name:'Baconos',price:3200,toppings:['paradicsomszósz','mozzarella','bacon','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · bacon · oregánó'},
+  {id:'p11',cat:'pizza',name:'Szalámis',price:3300,toppings:['paradicsomszósz','mozzarella','szalámi','oregánó'],extras:['Extra sajt|490','Extra szalámi|590','Jalapeño|390'],photo:'assets/pizza-szalami.jpg',featured:true,ing:'paradicsomszósz · mozzarella · szalámi · oregánó'},
+  {id:'p12',cat:'pizza',name:'Tonhalas',price:3400,toppings:['paradicsomszósz','mozzarella','tonhal','vöröshagyma','zöld olajbogyó'],extras:['Extra tonhal|690','Extra sajt|490','Lemon|290'],ing:'paradicsomszósz · mozzarella · tonhal · vöröshagyma · zöld olajbogyó'},
+  {id:'p13',cat:'pizza',name:'Vegyes Sajtos',price:3500,toppings:['paradicsomszósz','mozzarella','füta','trappista','füstölt sajt','oregánó'],extras:['Méz|290','Dió|390','Rukkola|290'],ing:'paradicsomszósz · mozzarella · füta · trappista · füstölt sajt · oregánó'},
+  {id:'p14',cat:'pizza',name:'Vega',price:3200,toppings:['paradicsomszósz','mozzarella','paprika','gomba','vöröshagyma','paradicsom','oregánó'],extras:['Extra sajt|490','Feta|490','Rukkola|290'],ing:'paradicsomszósz · mozzarella · paprika · gomba · vöröshagyma · paradicsom · oregánó'},
+  {id:'p15',cat:'pizza',name:'Kedvenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','szalámi','paprika','vöröshagyma','oregánó'],extras:['Extra sajt|490','Bacon|590','Kukorica|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · szalámi · paprika · vöröshagyma · oregánó'},
+  {id:'p16',cat:'pizza',name:'Ínyenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paprika','oregánó'],extras:['Extra sajt|490','Extra pepperóni|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paprika · oregánó'},
+  {id:'p17',cat:'pizza',name:'Betyár',price:3650,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paradicsom','füstölt sajt','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paradicsom · füstölt sajt · oregánó'},
+  {id:'p18',cat:'pizza',name:'Magyaros',price:3650,toppings:['paradicsomszósz','mozzarella','parasztkolbász','bacon','vöröshagyma','paradicsom','hegyi erős','oregánó'],extras:['Extra sajt|490','Extra kolbász|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · parasztkolbász · bacon · vöröshagyma · paradicsom · hegyi erős · oregánó'},
+  {id:'p19',cat:'pizza',name:'HúsImádó',price:3700,toppings:['paradicsomszósz','mozzarella','szalámi','füstölt sonka','bacon','parasztkolbász','oregánó'],extras:['Extra sajt|490','Extra bacon|590','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · szalámi · füstölt sonka · bacon · parasztkolbász · oregánó'},
+  {id:'i1',cat:'ital',name:'Üdítő 0,5 l',price:590,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
+  {id:'i2',cat:'ital',name:'Ásványvíz 0,5 l',price:490,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
+  {id:'i3',cat:'ital',name:'Házi limonádé 0,4 l',price:890,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
+  {id:'d1',cat:'dessert',name:'Desszert',price:1190,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós desszertlap érkezéséig'}
 ];
-const DELIVERY_FEE = 590; // helyőrző
+const DELIVERY_FEE = 590; // helyőrző — a valós kiszállítási díj megerősítésre vár
+const RESTAURANT = {
+  phone: '+36307869239',
+  phoneDisplay: '+36 30 786 9239',
+  hours: [
+    {d:'Hétfő – Kedd', t:'Zárva'},
+    {d:'Szerda – Vasárnap', t:'16:00 – 22:00'}
+  ],
+  note: 'Kézzel nyújtott, kemencében süttt — saját recept alapján. Kérhető fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal.'
+};
 const CAT_LABEL = {pizza:'Pizzák',ital:'Italok',dessert:'Desszertek'};
 const fmt = n => n.toLocaleString('hu-HU') + ' Ft';
 const $ = s => document.querySelector(s);
@@ -799,15 +825,16 @@ function renderMenu(){
     idx = 0;
     html += `<div class="menu-group"><h3 class="kicker" style="margin-bottom:14px"><span class="num">${CAT_LABEL[cat]}</span></h3>`;
     if(cat === 'pizza'){
-      html += `<div class="ph wide rv" role="img" aria-label="Fotóhelyőrző: ${CAT_LABEL[cat]}"><span class="ph-num">${CAT_LABEL[cat].toUpperCase()}</span><span class="ph-tag">Saját fotó helye — kategória</span></div>`;
+      html += `<div class="ph wide has-photo rv" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizzák"><img src="assets/pizza-szalami.jpg" alt="Szalámis pizza" loading="lazy"></div>`;
     }
     for(const it of items){
       idx++;
+      const demoTag = it.demo ? '<span class="demo-tag">demó</span>' : '';
       html += `
       <div class="menu-row">
         <span class="idx">${String(idx).padStart(2,'0')}</span>
         <div class="main">
-          <h4>${it.name}<span class="demo-tag">demó</span></h4>
+          <h4>${it.name}${demoTag}</h4>
           <p class="ing">${it.ing}</p>
         </div>
         <span class="price">${fmt(it.price)}</span>
@@ -819,7 +846,7 @@ function renderMenu(){
   list.innerHTML = html;
 }
 function renderFeatured(){
-  $$('.demo-item-name').forEach(el => el.innerHTML = byId(el.dataset.id).name + '<span class="demo-tag">demó</span>');
+  $$('.demo-item-name').forEach(el => el.textContent = byId(el.dataset.id).name);
   $$('.demo-item-price').forEach(el => el.textContent = fmt(byId(el.dataset.id).price));
   $$('.demo-item-ing').forEach(el => el.textContent = byId(el.dataset.id).ing);
 }
@@ -830,8 +857,12 @@ function openConfig(id){
   const it = byId(id);
   cfg = {id, qty:1, removed:[], extras:new Set(), note:''};
   $('#cfgName').textContent = it.name;
-  $('#cfgNum').textContent = it.cat === 'pizza' ? it.name.split(' ')[0].slice(0,6).toUpperCase() : it.name.slice(0,4).toUpperCase();
   $('#cfgIng').textContent = it.ing;
+  const photo = $('#cfgPhoto');
+  photo.classList.toggle('has-photo', !!it.photo);
+  photo.innerHTML = it.photo
+    ? `<img src="${it.photo}" alt="${it.name}" loading="lazy">`
+    : `<span class="ph-num">${it.cat === 'pizza' ? it.name.split(' ')[0].slice(0,6).toUpperCase() : it.name.slice(0,4).toUpperCase()}</span><span class="ph-tag">Fotó helye</span>`;
   $('#cfgBase').textContent = fmt(it.price);
   $('#cfgNote').value = '';
   $('#cfgQty').textContent = '1';
