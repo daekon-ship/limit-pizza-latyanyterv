@@ -229,7 +229,13 @@ header.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
 }
 
 /* ── Étlap ────────────────────────────────── */
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;position:sticky;top:64px;z-index:40;background:var(--paper);padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.menu-rows{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:1021px){
+  .menu-group .menu-rows{grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,60px)}
+  .menu-group > .ph{max-height:340px}
+  .menu-group > .ph img{height:100%;object-fit:cover}
+}
 .chip{
   border:2px solid var(--ink);border-radius:999px;padding:10px 20px;
   font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
@@ -540,10 +546,10 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     </div>
     <div class="hero-media rv in" style="transition-delay:.25s">
       <div class="ph has-photo" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizza">
-        <img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Limit Pizza — Margherita, kemencéből" loading="eager">
+        <img src="assets/pizza-margherita.jpg" srcset="assets/pizza-margherita-400.jpg 400w, assets/pizza-margherita-800.jpg 800w, assets/pizza-margherita.jpg 1600w" sizes="(max-width:1020px) 92vw, 46vw" width="1600" height="1200" alt="Limit Pizza — Margherita, kemencéből" loading="eager" fetchpriority="high">
       </div>
       <div class="ph ph-mini has-photo" role="img" aria-label="Részletfotó">
-        <img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Pizza részlet" loading="lazy">
+        <img src="assets/pizza-vega.jpg" width="1600" height="1200" alt="Pizza részlet" loading="lazy">
       </div>
     </div>
   </div>
@@ -565,7 +571,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
   </div>
   <div class="feat-grid">
     <article class="feat-card feat-a rv">
-      <div class="ph has-photo" role="img" aria-label="Margherita — kemencéből"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita pizza" loading="lazy"></div>
+      <div class="ph has-photo" role="img" aria-label="Margherita — kemencéből"><img src="assets/pizza-margherita.jpg" srcset="assets/pizza-margherita-400.jpg 400w, assets/pizza-margherita-800.jpg 800w, assets/pizza-margherita.jpg 1600w" sizes="(max-width:1020px) 92vw, 46vw" width="1600" height="1200" alt="Margherita pizza" loading="lazy"></div>
       <span class="feat-badge">A favorit</span>
       <div class="feat-info">
         <h3 class="demo-item-name" data-id="p1"></h3>
@@ -578,27 +584,27 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       </div>
     </article>
     <article class="feat-card feat-b rv">
-      <div class="ph has-photo" role="img" aria-label="Tavaszi pizza"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Tavaszi pizza" loading="lazy"></div>
+      <div class="ph has-photo" role="img" aria-label="Hawaii pizza"><img src="assets/pizza-vega.jpg" width="1600" height="1200" alt="Vega pizza" loading="lazy"></div>
       <div class="feat-info">
-        <h3 class="demo-item-name" data-id="p2"></h3>
-        <span class="price demo-item-price" data-id="p2"></span>
-        <p class="ing demo-item-ing" data-id="p2"></p>
+        <h3 class="demo-item-name" data-id="p5"></h3>
+        <span class="price demo-item-price" data-id="p5"></span>
+        <p class="ing demo-item-ing" data-id="p5"></p>
       </div>
       <div class="feat-actions">
-        <button class="btn sm" data-quick="p2">Kosárba</button>
-        <button class="btn ghost sm" data-config="p2">Testreszabom</button>
+        <button class="btn sm" data-quick="p5">Kosárba</button>
+        <button class="btn ghost sm" data-config="p5">Testreszabom</button>
       </div>
     </article>
     <article class="feat-card feat-c rv">
-      <div class="ph wide has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>
+      <div class="ph wide has-photo" role="img" aria-label="Hawaii pizza"><img src="assets/pizza-hawaii.jpg" width="1600" height="1200" alt="Hawaii pizza" loading="lazy"></div>
       <div class="feat-info">
-        <h3 class="demo-item-name" data-id="p3"></h3>
-        <span class="price demo-item-price" data-id="p3"></span>
-        <p class="ing demo-item-ing" data-id="p3"></p>
+        <h3 class="demo-item-name" data-id="p14"></h3>
+        <span class="price demo-item-price" data-id="p14"></span>
+        <p class="ing demo-item-ing" data-id="p14"></p>
       </div>
       <div class="feat-actions">
-        <button class="btn sm" data-quick="p3">Kosárba</button>
-        <button class="btn ghost sm" data-config="p3">Testreszabom</button>
+        <button class="btn sm" data-quick="p14">Kosárba</button>
+        <button class="btn ghost sm" data-config="p14">Testreszabom</button>
       </div>
     </article>
   </div>
@@ -612,13 +618,13 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
   </div>
   <div class="menu-note rv">
     <span aria-hidden="true">✓</span>
-    <span><b>Valós étlap.</b> A nevek, összetevők és árak az ügyfél eredeti étlapjáról származnak (30–32 cm). Kérhető fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal. <b>Az italok és desszertek egyelőre helyőrzők</b>, és a rendelés funkciók demó módban működnek.</span>
+    <span><b>Valós étlap.</b> A nevek, összetevők és árak az ügyfél eredeti étlapjáról származnak (30–32 cm). Kérhető fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal. Allergének: glutén, tej, halfélék, csípős. <b>5 db pizza rendelése esetén ajándék 1,75 l Coca Cola!</b> A rendelési funkciók demó módban működnek.</span>
   </div>
   <div class="chips rv" role="tablist" aria-label="Kategóriaszűrő" id="menuChips">
     <button class="chip on" role="tab" aria-selected="true" data-cat="all">Összes</button>
     <button class="chip" role="tab" aria-selected="false" data-cat="pizza">Pizzák</button>
     <button class="chip" role="tab" aria-selected="false" data-cat="ital">Italok</button>
-    <button class="chip" role="tab" aria-selected="false" data-cat="dessert">Desszertek</button>
+    
   </div>
   <div id="menuList"></div>
 </section>
@@ -648,12 +654,12 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
     <p class="lede">Kizárólag a pizzéria saját fotói kerülnek ide — igényes, változatos rácsban. Addig egyértelmű helyőrzőkkel dolgozunk.</p>
   </div>
   <div class="gal rv">
-    <div class="ph g1 has-photo" role="img" aria-label="Pizza a kemencéből"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza felülről" loading="lazy"></div>
-    <div class="ph g2 has-photo" role="img" aria-label="Pizza részlet"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Tavaszi pizza" loading="lazy"></div>
-    <div class="ph g3 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
-    <div class="ph g4 has-photo" role="img" aria-label="Pizza"><img src="assets/pizza-tavaszi.jpg" width="1600" height="1200" alt="Pizza" loading="lazy"></div>
-    <div class="ph g5 has-photo" role="img" aria-label="Szalámis pizza"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>
-    <div class="ph g6 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
+    <div class="ph g1 has-photo" role="img" aria-label="Hawaii pizza a kemencéből"><img src="assets/pizza-hawaii.jpg" width="1600" height="1200" alt="Hawaii pizza felülről" loading="lazy"></div>
+    <div class="ph g2 has-photo" role="img" aria-label="Pizza részlet"><img src="assets/pizza-vega.jpg" width="1600" height="1200" alt="Vega pizza" loading="lazy"></div>
+    <div class="ph g3 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita-800.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
+    <div class="ph g4 has-photo" role="img" aria-label="Pizza"><img src="assets/pizza-vega.jpg" width="1600" height="1200" alt="Pizza" loading="lazy"></div>
+    <div class="ph g5 has-photo" role="img" aria-label="Hawaii pizza"><img src="assets/pizza-hawaii.jpg" width="1600" height="1200" alt="Hawaii pizza" loading="lazy"></div>
+    <div class="ph g6 has-photo" role="img" aria-label="Margherita"><img src="assets/pizza-margherita-800.jpg" width="1600" height="1200" alt="Margherita" loading="lazy"></div>
   </div>
 </section>
 
@@ -679,9 +685,13 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
       <p style="margin-top:12px;font-size:12.5px">Rendelés: <b>csak telefonon</b> — a webes rendelés hamarosan.</p>
     </div>
     <div class="contact-card rv">
-      <h3>Rendelés</h3>
-      <p>Kézzel nyújtott, kemencében süttt pizza — fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal is.</p>
-      <p style="margin-top:12px"><a class="btn" href="#etlap">Étlap megnyitása</a></p>
+      <h3>Kiszállítás</h3>
+      <ul>
+        <li><b>Bük</b><span>ingyenes</span></li>
+        <li><b>Csepreg · Bő · Gőr · Lócs</b><span>500 Ft</span></li>
+        <li><b>Sajtoskál · Tormásliget</b><span>700 Ft</span></li>
+      </ul>
+      <p style="margin-top:10px;font-size:12.5px">Minimum rendelés: 2000 Ft. A futárnál OTP SZÉP kártyával és bankkártyával is fizethetsz.</p>
     </div>
   </div>
 </section>
@@ -707,6 +717,7 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
         <p><a href="tel:+36307869239" style="color:rgba(244,239,229,.7)">+36 30 786 9239</a></p>
         <p>Rendelés: csak telefonon</p>
         <p><span class="missing">[cím érkezik]</span></p>
+        <p>FB: Limit Pizza Házhozszállítás · IG: limitpizza</p>
       </div>
       <div>
         <h4>Jogi</h4>
@@ -747,8 +758,12 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
         <div class="toppings" id="cfgToppings"></div>
       </div>
       <div class="cfg-sec">
-        <small>Extrák — felárral</small>
-        <div class="toppings" id="cfgExtras"></div>
+        <small>Plusz feltétek — +350 Ft</small>
+        <div class="toppings" id="cfgExtrasPlus"></div>
+      </div>
+      <div class="cfg-sec">
+        <small>Extra feltétek — +550 Ft</small>
+        <div class="toppings" id="cfgExtrasExtra"></div>
       </div>
       <div class="cfg-sec">
         <small>Rendelési megjegyzés</small>
@@ -809,31 +824,42 @@ footer{background:var(--ink);color:var(--bone);margin-top:clamp(80px,10vw,150px)
 /* ══ ÉTLAP — a Limit Pizza valós étlapja (ügyfél által küldött étlap 1. oldala, 30–32 cm) ══
    Összetevők az eredeti étlapról. Az italok/desszertek és extrák egyelőre demó helyőrzők. */
 const MENU = [
-  {id:'p1',cat:'pizza',name:'Margherita',price:2950,toppings:['paradicsomszósz','mozzarella','oregánó'],extras:['Extra sajt|490','Rukkola|290','Fokhagyma|290'],photo:'assets/pizza-margherita.jpg',featured:true,ing:'paradicsomszósz · mozzarella · oregánó'},
-  {id:'p2',cat:'pizza',name:'Kukoricás',price:3050,toppings:['paradicsomszósz','mozzarella','kukorica','oregánó'],extras:['Extra sajt|490','Sonka|590','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · kukorica · oregánó'},
-  {id:'p3',cat:'pizza',name:'Gombás',price:3050,toppings:['paradicsomszósz','mozzarella','gomba','oregánó'],extras:['Extra sajt|490','Sonka|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · gomba · oregánó'},
-  {id:'p4',cat:'pizza',name:'Sonkás',price:3200,toppings:['paradicsomszósz','mozzarella','füstölt sonka','oregánó'],extras:['Extra sajt|490','Gomba|390','Kukorica|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · oregánó'},
-  {id:'p5',cat:'pizza',name:'Hawaii',price:3350,toppings:['paradicsomszósz','mozzarella','füstölt sonka','ananász','oregánó'],extras:['Extra sajt|490','Extra ananász|390','Curry|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · ananász · oregánó'},
-  {id:'p6',cat:'pizza',name:'Tavaszi',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','paprika','oregánó'],extras:['Extra sajt|490','Gomba|390','Rukkola|290'],photo:'assets/pizza-tavaszi.jpg',featured:true,ing:'paradicsomszósz · mozzarella · füstölt sonka · paprika · oregánó'},
-  {id:'p7',cat:'pizza',name:'Erdész',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','oregánó'],extras:['Extra sajt|490','Bacon|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · oregánó'},
-  {id:'p8',cat:'pizza',name:'Songoku',price:3400,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','paprika','oregánó'],extras:['Extra sajt|490','Kukorica|390','Bacon|590'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · paprika · oregánó'},
-  {id:'p9',cat:'pizza',name:'Kolbászos',price:3200,toppings:['paradicsomszósz','mozzarella','parasztkolbász','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · parasztkolbász · oregánó'},
-  {id:'p10',cat:'pizza',name:'Baconos',price:3200,toppings:['paradicsomszósz','mozzarella','bacon','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · bacon · oregánó'},
-  {id:'p11',cat:'pizza',name:'Szalámis',price:3300,toppings:['paradicsomszósz','mozzarella','szalámi','oregánó'],extras:['Extra sajt|490','Extra szalámi|590','Jalapeño|390'],photo:'assets/pizza-szalami.jpg',featured:true,ing:'paradicsomszósz · mozzarella · szalámi · oregánó'},
-  {id:'p12',cat:'pizza',name:'Tonhalas',price:3400,toppings:['paradicsomszósz','mozzarella','tonhal','vöröshagyma','zöld olajbogyó'],extras:['Extra tonhal|690','Extra sajt|490','Lemon|290'],ing:'paradicsomszósz · mozzarella · tonhal · vöröshagyma · zöld olajbogyó'},
-  {id:'p13',cat:'pizza',name:'Vegyes Sajtos',price:3500,toppings:['paradicsomszósz','mozzarella','füta','trappista','füstölt sajt','oregánó'],extras:['Méz|290','Dió|390','Rukkola|290'],ing:'paradicsomszósz · mozzarella · füta · trappista · füstölt sajt · oregánó'},
-  {id:'p14',cat:'pizza',name:'Vega',price:3200,toppings:['paradicsomszósz','mozzarella','paprika','gomba','vöröshagyma','paradicsom','oregánó'],extras:['Extra sajt|490','Feta|490','Rukkola|290'],ing:'paradicsomszósz · mozzarella · paprika · gomba · vöröshagyma · paradicsom · oregánó'},
-  {id:'p15',cat:'pizza',name:'Kedvenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','szalámi','paprika','vöröshagyma','oregánó'],extras:['Extra sajt|490','Bacon|590','Kukorica|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · szalámi · paprika · vöröshagyma · oregánó'},
-  {id:'p16',cat:'pizza',name:'Ínyenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paprika','oregánó'],extras:['Extra sajt|490','Extra pepperóni|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paprika · oregánó'},
-  {id:'p17',cat:'pizza',name:'Betyár',price:3650,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paradicsom','füstölt sajt','oregánó'],extras:['Extra sajt|490','Hagyma|290','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paradicsom · füstölt sajt · oregánó'},
-  {id:'p18',cat:'pizza',name:'Magyaros',price:3650,toppings:['paradicsomszósz','mozzarella','parasztkolbász','bacon','vöröshagyma','paradicsom','hegyi erős','oregánó'],extras:['Extra sajt|490','Extra kolbász|590','Fokhagyma|290'],ing:'paradicsomszósz · mozzarella · parasztkolbász · bacon · vöröshagyma · paradicsom · hegyi erős · oregánó'},
-  {id:'p19',cat:'pizza',name:'HúsImádó',price:3700,toppings:['paradicsomszósz','mozzarella','szalámi','füstölt sonka','bacon','parasztkolbász','oregánó'],extras:['Extra sajt|490','Extra bacon|590','Jalapeño|390'],ing:'paradicsomszósz · mozzarella · szalámi · füstölt sonka · bacon · parasztkolbász · oregánó'},
-  {id:'i1',cat:'ital',name:'Üdítő 0,5 l',price:590,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
-  {id:'i2',cat:'ital',name:'Ásványvíz 0,5 l',price:490,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
-  {id:'i3',cat:'ital',name:'Házi limonádé 0,4 l',price:890,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós itallap érkezéséig'},
-  {id:'d1',cat:'dessert',name:'Desszert',price:1190,toppings:[],extras:[],demo:true,ing:'demó helyőrző — a valós desszertlap érkezéséig'}
+  {id:'p1',cat:'pizza',name:'Margherita',price:2950,toppings:['paradicsomszósz','mozzarella','oregánó'],photo:'assets/pizza-margherita.jpg',photoSet:'margherita',featured:true,ing:'paradicsomszósz · mozzarella · oregánó'},
+  {id:'p2',cat:'pizza',name:'Kukoricás',price:3050,toppings:['paradicsomszósz','mozzarella','kukorica','oregánó'],ing:'paradicsomszósz · mozzarella · kukorica · oregánó'},
+  {id:'p3',cat:'pizza',name:'Gombás',price:3050,toppings:['paradicsomszósz','mozzarella','gomba','oregánó'],ing:'paradicsomszósz · mozzarella · gomba · oregánó'},
+  {id:'p4',cat:'pizza',name:'Sonkás',price:3200,toppings:['paradicsomszósz','mozzarella','füstölt sonka','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · oregánó'},
+  {id:'p5',cat:'pizza',name:'Hawaii',price:3350,toppings:['paradicsomszósz','mozzarella','füstölt sonka','ananász','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · ananász · oregánó'},
+  {id:'p6',cat:'pizza',name:'Tavaszi',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','paprika','oregánó'],featured:true,ing:'paradicsomszósz · mozzarella · füstölt sonka · paprika · oregánó'},
+  {id:'p7',cat:'pizza',name:'Erdész',price:3300,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · oregánó'},
+  {id:'p8',cat:'pizza',name:'Songoku',price:3400,toppings:['paradicsomszósz','mozzarella','füstölt sonka','gomba','paprika','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · gomba · paprika · oregánó'},
+  {id:'p9',cat:'pizza',name:'Kolbászos',price:3200,toppings:['paradicsomszósz','mozzarella','parasztkolbász','oregánó'],ing:'paradicsomszósz · mozzarella · parasztkolbász · oregánó'},
+  {id:'p10',cat:'pizza',name:'Baconos',price:3200,toppings:['paradicsomszósz','mozzarella','bacon','oregánó'],ing:'paradicsomszósz · mozzarella · bacon · oregánó'},
+  {id:'p11',cat:'pizza',name:'Szalámis',price:3300,toppings:['paradicsomszósz','mozzarella','szalámi','oregánó'],featured:true,ing:'paradicsomszósz · mozzarella · szalámi · oregánó'},
+  {id:'p12',cat:'pizza',name:'Tonhalas',price:3400,toppings:['paradicsomszósz','mozzarella','tonhal','vöröshagyma','zöld olajbogyó'],ing:'paradicsomszósz · mozzarella · tonhal · vöröshagyma · zöld olajbogyó'},
+  {id:'p13',cat:'pizza',name:'Vegyes Sajtos',price:3500,toppings:['paradicsomszósz','mozzarella','füta','trappista','füstölt sajt','oregánó'],ing:'paradicsomszósz · mozzarella · füta · trappista · füstölt sajt · oregánó'},
+  {id:'p14',cat:'pizza',name:'Vega',price:3200,toppings:['paradicsomszósz','mozzarella','paprika','gomba','vöröshagyma','paradicsom','oregánó'],ing:'paradicsomszósz · mozzarella · paprika · gomba · vöröshagyma · paradicsom · oregánó'},
+  {id:'p15',cat:'pizza',name:'Kedvenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','szalámi','paprika','vöröshagyma','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · szalámi · paprika · vöröshagyma · oregánó'},
+  {id:'p16',cat:'pizza',name:'Ínyenc',price:3600,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paprika','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paprika · oregánó'},
+  {id:'p17',cat:'pizza',name:'Betyár',price:3650,toppings:['paradicsomszósz','mozzarella','füstölt sonka','bacon','csunge','pepperóni','paradicsom','füstölt sajt','oregánó'],ing:'paradicsomszósz · mozzarella · füstölt sonka · bacon · csunge · pepperóni · paradicsom · füstölt sajt · oregánó'},
+  {id:'p18',cat:'pizza',name:'Magyaros',price:3650,toppings:['paradicsomszósz','mozzarella','parasztkolbász','bacon','vöröshagyma','paradicsom','hegyi erős','oregánó'],ing:'paradicsomszósz · mozzarella · parasztkolbász · bacon · vöröshagyma · paradicsom · hegyi erős · oregánó'},
+  {id:'p19',cat:'pizza',name:'HúsImádó',price:3700,toppings:['paradicsomszósz','mozzarella','szalámi','füstölt sonka','bacon','parasztkolbász','oregánó'],ing:'paradicsomszósz · mozzarella · szalámi · füstölt sonka · bacon · parasztkolbász · oregánó'},
+  {id:'i1',cat:'ital',name:'Coca Cola 0,5 l',price:800,toppings:[],ing:'üveges üdítő'},
+  {id:'i2',cat:'ital',name:'Coca Cola Zero 0,5 l',price:800,toppings:[],ing:'üveges üdítő'},
+  {id:'i3',cat:'ital',name:'Coca Cola 1,75 l',price:1100,toppings:[],ing:'nagy palack'},
+  {id:'i4',cat:'ital',name:'Coca Cola Zero 1,75 l',price:1100,toppings:[],ing:'nagy palack'},
+  {id:'i5',cat:'ital',name:'Fanta 0,5 l',price:800,toppings:[],ing:'üveges üdítő'},
+  {id:'i6',cat:'ital',name:'Hell energiaital 0,25 l',price:500,toppings:[],ing:'energiaital'}
 ];
-const DELIVERY_FEE = 590; // helyőrző — a valós kiszállítási díj megerősítésre vár
+/* Valós feltétárak az étlap 2. oldaláról */
+const EXTRAS_PLUS = ['kukorica','paradicsom','lilahagyma','gomba','hegyes erős','ananász','zöld olajbogyó','csemege pepperóni'];   // +350 Ft
+const EXTRAS_EXTRA = ['füstölt sonka','szalámi','bacon','parasztkolbász','tonhal','feta sajt','trappista sajt','füstölt sajt','mozzarella']; // +550 Ft
+const extraPrice = n => EXTRAS_EXTRA.includes(n) ? 550 : 350;
+const DELIVERY_ZONES = [
+  {label:'Bük', fee:0},
+  {label:'Csepreg · Bő · Gőr · Lócs', fee:500},
+  {label:'Sajtoskál · Tormásliget', fee:700}
+];
+const MIN_ORDER = 2000;
 const RESTAURANT = {
   phone: '+36307869239',
   phoneDisplay: '+36 30 786 9239',
@@ -843,7 +869,7 @@ const RESTAURANT = {
   ],
   note: 'Kézzel nyújtott, kemencében süttt — saját recept alapján. Kérhető fokhagymás vagy tejfölös, illetve csípős paradicsomos alappal.'
 };
-const CAT_LABEL = {pizza:'Pizzák',ital:'Italok',dessert:'Desszertek'};
+const CAT_LABEL = {pizza:'Pizzák',ital:'Üdítők'};
 const fmt = n => n.toLocaleString('hu-HU') + ' Ft';
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
@@ -853,19 +879,20 @@ const byId = id => MENU.find(m => m.id === id);
 let activeCat = 'all';
 function renderMenu(){
   const list = $('#menuList');
-  const cats = activeCat === 'all' ? ['pizza','ital','dessert'] : [activeCat];
+  const cats = activeCat === 'all' ? ['pizza','ital'] : [activeCat];
   let idx = 0, html = '';
   for(const cat of cats){
     const items = MENU.filter(m => m.cat === cat);
     idx = 0;
     html += `<div class="menu-group"><h3 class="kicker" style="margin-bottom:14px"><span class="num">${CAT_LABEL[cat]}</span></h3>`;
     if(cat === 'pizza'){
-      html += `<div class="ph wide has-photo rv" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében süttt pizzák"><img src="assets/pizza-szalami.jpg" width="1600" height="1200" alt="Szalámis pizza" loading="lazy"></div>`;
+      html += `<div class="ph wide has-photo rv" role="img" aria-label="Limit Pizza — kézzel nyújtott, kemencében sült pizzák"><img src="assets/pizza-hawaii.jpg" width="1600" height="1200" alt="Hawaii pizza" loading="lazy"></div>`;
     }
+    let rows = '';
     for(const it of items){
       idx++;
       const demoTag = it.demo ? '<span class="demo-tag">demó</span>' : '';
-      html += `
+      rows += `
       <div class="menu-row">
         <span class="idx">${String(idx).padStart(2,'0')}</span>
         <div class="main">
@@ -876,7 +903,7 @@ function renderMenu(){
         <button class="add-sm" data-quick="${it.id}" aria-label="${it.name} kosárba">+</button>
       </div>`;
     }
-    html += `</div>`;
+    html += `<div class="menu-rows">${rows}</div></div>`;
   }
   list.innerHTML = html;
 }
@@ -890,13 +917,13 @@ function renderFeatured(){
 let cfg = null;
 function openConfig(id){
   const it = byId(id);
-  cfg = {id, qty:1, removed:[], extras:new Set(), note:''};
+  cfg = {id, qty:1, removed:[], plus:new Set(), extra:new Set(), note:''};
   $('#cfgName').textContent = it.name;
   $('#cfgIng').textContent = it.ing;
   const photo = $('#cfgPhoto');
   photo.classList.toggle('has-photo', !!it.photo);
   photo.innerHTML = it.photo
-    ? `<img src="${it.photo}" alt="${it.name}" loading="lazy">`
+    ? `<img src="${it.photo}" ${it.photoSet ? `srcset="assets/pizza-${it.photoSet}-400.jpg 400w, assets/pizza-${it.photoSet}-800.jpg 800w, assets/pizza-${it.photoSet}.jpg 1600w" sizes="(max-width:640px) 100vw, 42vw"` : ''} alt="${it.name}" loading="lazy">`
     : `<span class="ph-num">${it.cat === 'pizza' ? it.name.split(' ')[0].slice(0,6).toUpperCase() : it.name.slice(0,4).toUpperCase()}</span><span class="ph-tag">Fotó helye</span>`;
   $('#cfgBase').textContent = fmt(it.price);
   $('#cfgNote').value = '';
@@ -910,21 +937,16 @@ function openConfig(id){
   const baseSec = $('#cfgBaseOpt');
   baseSec.style.display = it.cat === 'pizza' ? '' : 'none';
   $$('#cfgBaseOpt .tchip').forEach(b => b.classList.toggle('on', b.dataset.base === 'Klasszikus paradicsomos'));
-  $('#cfgExtras').innerHTML = it.extras.map(e => {
-    const [n,p] = e.split('|');
-    return `<button type="button" class="tchip extra" data-x="${n}" data-p="${p}">${n}<span class="fp">+${p} Ft</span></button>`;
-  }).join('');
+  $('#cfgExtrasPlus').innerHTML = EXTRAS_PLUS.map(n =>
+    `<button type="button" class="tchip extra" data-x="${n}" data-g="plus">${n}<span class="fp">+350 Ft</span></button>`).join('');
+  $('#cfgExtrasExtra').innerHTML = EXTRAS_EXTRA.map(n =>
+    `<button type="button" class="tchip extra" data-x="${n}" data-g="extra">${n}<span class="fp">+550 Ft</span></button>`).join('');
   updateCfgTotal();
   showOverlay('config');
 }
 function cfgUnitPrice(){
   const it = byId(cfg.id);
-  let p = it.price;
-  cfg.extras.forEach(n => {
-    const e = it.extras.find(x => x.startsWith(n + '|'));
-    if(e) p += parseInt(e.split('|')[1],10);
-  });
-  return p;
+  return it.price + cfg.plus.size * 350 + cfg.extra.size * 550;
 }
 function updateCfgTotal(){ $('#cfgTotal').textContent = fmt(cfgUnitPrice() * cfg.qty); }
 $('#cfgToppings').addEventListener('click', e => {
@@ -938,38 +960,45 @@ $('#cfgBaseOpt').addEventListener('click', e => {
   cfg.base = b.dataset.base;
   $$('#cfgBaseOpt .tchip').forEach(c => c.classList.toggle('on', c === b));
 });
-$('#cfgExtras').addEventListener('click', e => {
+$('#cfgExtrasPlus').addEventListener('click', e => {
   const b = e.target.closest('.tchip'); if(!b) return;
   const n = b.dataset.x;
-  if(cfg.extras.has(n)){ cfg.extras.delete(n); b.classList.remove('on'); }
-  else { cfg.extras.add(n); b.classList.add('on'); }
+  if(cfg.plus.has(n)){ cfg.plus.delete(n); b.classList.remove('on'); }
+  else { cfg.plus.add(n); b.classList.add('on'); }
+  updateCfgTotal();
+});
+$('#cfgExtrasExtra').addEventListener('click', e => {
+  const b = e.target.closest('.tchip'); if(!b) return;
+  const n = b.dataset.x;
+  if(cfg.extra.has(n)){ cfg.extra.delete(n); b.classList.remove('on'); }
+  else { cfg.extra.add(n); b.classList.add('on'); }
   updateCfgTotal();
 });
 $('#cfgMinus').onclick = () => { if(cfg.qty > 1){ cfg.qty--; $('#cfgQty').textContent = cfg.qty; updateCfgTotal(); } };
 $('#cfgPlus').onclick = () => { cfg.qty++; $('#cfgQty').textContent = cfg.qty; updateCfgTotal(); };
 $('#cfgAdd').onclick = () => {
-  addToCart(cfg.id, cfg.qty, cfg.removed, [...cfg.extras], $('#cfgNote').value.trim(), cfg.base);
+  addToCart(cfg.id, cfg.qty, cfg.removed, {plus:[...cfg.plus], extra:[...cfg.extra]}, $('#cfgNote').value.trim(), cfg.base);
   hideOverlay('config');
   toast('Kosárba téve');
 };
 /* ══ Kosár ══ */
 let cart = [];
 let orderMode = 'delivery';
-function configKey(id, removed, extras, base){ return id + '|' + (base || '') + '|' + [...removed].sort().join(',') + '|' + [...extras].sort().join(','); }
+let zoneIdx = 0;
+function configKey(id, removed, extras, base){ return id + '|' + (base || '') + '|' + [...removed].sort().join(',') + '|' + [...(extras.plus||[])].sort().join(',') + '|' + [...(extras.extra||[])].sort().join(','); }
 function addToCart(id, qty, removed, extras, note, base){
+  extras = extras || {plus:[], extra:[]};
   const key = configKey(id, removed, extras, base);
   const found = cart.find(c => c.key === key);
   if(found){ found.qty += qty; found.note = note || found.note; }
-  else cart.push({key, id, qty, removed, extras, note, base: base || 'Klasszikus paradicsomos'});
+  else cart.push({key, id, qty, removed, extras: {plus: extras.plus || [], extra: extras.extra || []}, note, base: base || 'Klasszikus paradicsomos'});
   updateCartUI();
 }
 function cartCount(){ return cart.reduce((s,c) => s + c.qty, 0); }
 function cartSubtotal(){ return cart.reduce((s,c) => s + linePrice(c) * c.qty, 0); }
 function linePrice(c){
   const it = byId(c.id);
-  let p = it.price;
-  c.extras.forEach(n => { const e = it.extras.find(x => x.startsWith(n + '|')); if(e) p += parseInt(e.split('|')[1],10); });
-  return p;
+  return it.price + (c.extras.plus||[]).length * 350 + (c.extras.extra||[]).length * 550;
 }
 function updateCartUI(){
   const n = cartCount();
@@ -992,7 +1021,8 @@ function renderCart(){
     const bits = [];
     if(c.base && c.base !== 'Klasszikus paradicsomos') bits.push('Alap: ' + c.base);
     c.removed.forEach(r => bits.push('− ' + r));
-    c.extras.forEach(x => bits.push('+ ' + x));
+    (c.extras.plus||[]).forEach(x => bits.push('+ ' + x + ' (+350)'));
+    (c.extras.extra||[]).forEach(x => bits.push('+ ' + x + ' (+550)'));
     if(c.note) bits.push('„' + c.note + '”');
     return `
     <div class="cart-item">
@@ -1008,12 +1038,21 @@ function renderCart(){
     </div>`;
   }).join('');
   const sub = cart.reduce((s,c) => s + linePrice(c) * c.qty, 0);
-  const fee = orderMode === 'delivery' ? DELIVERY_FEE : 0;
+  const fee = orderMode === 'delivery' ? DELIVERY_ZONES[zoneIdx].fee : 0;
+  const gift = cartCount() >= 5 ? `<div class="row" style="color:var(--ember)"><span>Ajándék 5 pizza mellé</span><span>1,75 l Coca Cola</span></div>` : '';
+  const minWarn = orderMode === 'delivery' && sub < MIN_ORDER ? `<p style="font-size:12px;color:var(--ember);margin:6px 0 0">Minimum rendelési érték kiszállításnál: <b>${fmt(MIN_ORDER)}</b> — még ${fmt(MIN_ORDER - sub)} hiányzik.</p>` : '';
   cta.innerHTML = `
     <div class="seg" role="tablist" aria-label="Átvétel módja">
       <button class="${orderMode==='delivery'?'on':''}" data-mode="delivery" role="tab" aria-selected="${orderMode==='delivery'}">Kiszállítás</button>
       <button class="${orderMode==='pickup'?'on':''}" data-mode="pickup" role="tab" aria-selected="${orderMode==='pickup'}">Átvétel a helyszínen</button>
     </div>
+    ${orderMode==='delivery' ? `
+    <div class="cfg-sec" style="margin-top:12px">
+      <small>Hova szállítsunk? (kiszállítási díjak az étlap szerint)</small>
+      <div class="toppings" id="zoneChips">
+        ${DELIVERY_ZONES.map((z,i) => `<button type="button" class="tchip ${i===zoneIdx?'on':''}" data-zone="${i}">${z.label}${z.fee ? ' · ' + fmt(z.fee) : ' · ingyenes'}</button>`).join('')}
+      </div>
+    </div>` : ''}
     <div class="cart-form">
       <input id="fName" placeholder="Név" autocomplete="name">
       <input id="fPhone" placeholder="Telefonszám" autocomplete="tel" inputmode="tel">
@@ -1021,11 +1060,14 @@ function renderCart(){
       <textarea id="fNote" rows="2" placeholder="Megjegyzés a rendeléshez (kapucsengő, emelet…)" style="width:100%;border:2px solid var(--ink);border-radius:3px;padding:12px 14px;font:inherit;font-size:14px;background:transparent"></textarea>
     </div>
     <div class="cart-sum">
+      ${gift}
       <div class="row"><span>Részösszeg</span><span>${fmt(sub)}</span></div>
-      ${orderMode==='delivery' ? `<div class="row"><span>Kiszállítás (demó díj)</span><span>${fmt(fee)}</span></div>` : '<div class="row"><span>Átvétel a helyszínen</span><span>ingyenes</span></div>'}
+      ${orderMode==='delivery' ? `<div class="row"><span>Kiszállítás — ${DELIVERY_ZONES[zoneIdx].label}</span><span>${fee ? fmt(fee) : 'ingyenes'}</span></div>` : '<div class="row"><span>Átvétel a helyszínen</span><span>—</span></div>'}
       <div class="row total"><span>Összesen</span><span>${fmt(sub + fee)}</span></div>
     </div>
-    <button class="btn yellow" id="placeOrder" style="width:100%;margin-top:10px">Rendelés leadása · demó</button>
+    ${minWarn}
+    <p style="font-size:12px;color:var(--ink-3);margin:8px 0 0">A csomagolási díj az árat tartalmazza. A futárnál <b>OTP SZÉP kártyával és bankkártyával is fizethetsz</b>.</p>
+    <button class="btn yellow" id="placeOrder" style="width:100%;margin-top:10px" ${orderMode==='delivery' && sub < MIN_ORDER ? 'disabled data-off="1"' : ''}>Rendelés leadása · demó</button>
     <p style="font-size:12.5px;color:var(--ink-3);text-align:center;margin-top:10px">Valós rendelés egyelőre csak telefonon: <b><a href="tel:+36307869239" style="color:var(--ink)">+36 30 786 9239</a></b> — szerdától vasárnapig 16:00–22:00.</p>`;
 }
 $('#cartBody').addEventListener('click', e => {
@@ -1037,6 +1079,8 @@ $('#cartBody').addEventListener('click', e => {
 $('#cartCta').addEventListener('click', e => {
   const mode = e.target.closest('[data-mode]');
   if(mode){ orderMode = mode.dataset.mode; renderCart(); return; }
+  const zone = e.target.closest('[data-zone]');
+  if(zone){ zoneIdx = +zone.dataset.zone; renderCart(); return; }
   if(e.target.closest('#placeOrder')) placeOrder();
 });
 function placeOrder(){
@@ -1117,7 +1161,7 @@ $('#mobileBar').onclick = () => showOverlay('cart');
 $('#adminBtn').onclick = () => { renderAdmin(); showOverlay('admin'); };
 document.addEventListener('click', e => {
   const q = e.target.closest('[data-quick]');
-  if(q){ addToCart(q.dataset.quick, 1, [], [], ''); toast('Kosárba téve'); return; }
+  if(q){ addToCart(q.dataset.quick, 1, [], {plus:[],extra:[]}, ''); toast('Kosárba téve'); return; }
   const c = e.target.closest('[data-config]');
   if(c) openConfig(c.dataset.config);
 });
